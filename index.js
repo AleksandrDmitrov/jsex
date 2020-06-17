@@ -3,16 +3,19 @@
  * @param a
  * @param b
  * @param c
+ * @returns {null|number[]|number}
  */
 function sum(a, b, c) {
     const d = b * b - 4 * a * c;
-    if (d<0) {
+    if (d < 0) {
         return null;
+    }
+    if (d === 0) {
+        return -b / (2 * a);
     }
     const x1 = (-b + d * 0.5) / 2 * a;
     const x2 = (-b - d * 0.5) / 2 * a;
-    alert('X1= ' + x1);
-    alert('X1= ' + x2);
+    return [x1, x2];
 
 }
 

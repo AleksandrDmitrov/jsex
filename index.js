@@ -4,6 +4,10 @@ const cat = {
     breed: 'Siamese',
     isMale: true,
     weight: 5,
+    meow : function ()
+    {
+    console.log ( 'MEOW')
+}
 };
 
 

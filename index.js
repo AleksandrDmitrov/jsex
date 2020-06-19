@@ -1,17 +1,25 @@
-const userValue = prompt('Please input number ');
+const userValue = prompt('Chose drink: 1 - Coffe; 2 - Tea; 3 - Water ');
 
-const userNumber = Number(userValue);
 
-if (isNaN(userNumber)) {
-    alert('input NUMBER\! \! \!');
-} else if (userNumber % 5 === 0) {
-    alert('number multiple of 5');
-} else if (userNumber % 3 === 0) {
-    alert('number multiple of 3');
-} else if (userNumber % 2 === 0) {
-    alert('number multiple of 2');
-} else {
-    alert('number not multiple of 5,2,3');
+switch (userValue) {
+    case '1': {
+        alert('Your choice is Coffe');
+    }
+        break;
+    case '2': {
+        alert('Your choice is Tea');
+
+    }
+        break;
+    case '5':
+    case '3': {
+        alert('Your choice is Water');
+    }
+        break;
+    default: {
+        alert('EROR');
+    }
 }
+
 
 

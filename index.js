@@ -1,25 +1,51 @@
-const userValue = prompt('Chose drink: 1 - Coffe; 2 - Tea; 3 - Water ');
+const firstValue = prompt('Input number 1');
+const firstNumber = Number(firstValue);
+if (!isNaN(firstNumber)) {
+    const secondValue = prompt("Input number 2")
+    const secondNumber = Number(secondValue);
+    if (!isNaN(secondNumber)) {
+        const userFunction = prompt('Choice function +; -; *; /');
+        switch (userFunction) {
+            case '+': {
+                alert('answer = ' + sum(firstNumber, secondNumber))
+            }
+                break;
+            case '-': {
+                alert('answer = ' + subtraction(firstNumber, secondNumber))
+            }
+                break;
+            case '*': {
+                alert('answer = ' + multiplication(firstNumber, secondNumber))
+            }
+                break;
+            case '/': {
+                alert('answer = ' + division(firstNumber, secondNumber))
+            }
+                break;
 
 
-switch (userValue) {
-    case '1': {
-        alert('Your choice is Coffe');
-    }
-        break;
-    case '2': {
-        alert('Your choice is Tea');
-
-    }
-        break;
-    case '5':
-    case '3': {
-        alert('Your choice is Water');
-    }
-        break;
-    default: {
-        alert('EROR');
+        }
     }
 }
 
 
+function sum(a, b) {
+    return a + b;
+
+}
+
+function subtraction(a, b) {
+    return a - b;
+
+}
+
+function multiplication(a, b) {
+    return a * b;
+
+}
+
+function division(a, b) {
+    return a / b;
+
+}
 

@@ -1,15 +1,22 @@
-const tempLateStr1 = `2 + 2 = ${2 + 2}`;
-console.log(tempLateStr1);
+const CORRECT_PASSWORD = 'qwerty';
+const TRY_LIMIT = 5;
+let tryCount = 0;
 
-const tempLateStr2 = `2 - 2 = ${2 - 2}`;
-console.log(tempLateStr2);
+while (tryCount++ < TRY_LIMIT) {
+    console.log(`WHILE: ${tryCount}`);
+}
 
-const tempLateStr3 = `2 * 2 = ${2 * 2}`;
-console.log(tempLateStr3);
+tryCount = 0;
 
-const tempLateStr4 = `2 / 2 = ${2 / 2}`;
-console.log(tempLateStr4);
+do {
+    isPasswordCorrect = prompt('Enter password') === CORRECT_PASSWORD;
+    if (isPasswordCorrect)
+        break;
+    {
+    }
 
-const firstValue = Number(prompt('Please input you first number'));
-const secondValue = Number(prompt('Please input you second number'));
-alert(`${firstValue} + ${secondValue} = ${firstValue + secondValue}`);
+} while (++tryCount < TRY_LIMIT);
+
+alert(tryCount >= TRY_LIMIT
+    ? 'Password incorrect'
+    : 'Password correct')

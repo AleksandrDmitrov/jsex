@@ -1,6 +1,4 @@
-const  userValue = Number(prompt('Input your number'));
-if (!isNaN(userValue)){
-    for (let i = 0; i <= 100; i+= userValue){
-        console.log(i);
-    }
-}
+
+const arr1 = [1,2,3,4,5,6,7];
+
+const arr2 = new Array(1,2,3,4,5,6,7);

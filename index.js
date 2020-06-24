@@ -1,12 +1,19 @@
-const  familyPopulation = Number( prompt('Population'));
+function MyArray() {
+    this.length = 0;
+    }
 
-const userFamily = {};
+    const  myArrayProto = new MyArray();
 
-for (let i =0; i < familyPopulation; i++) {
-    userFamily[prompt('Name')] = {
-        age: prompt('Age'),
-        status: prompt('Status'),
-    };
-}
+myArrayProto.puch = function puch(item) {
+this[this.length] = item;
+return ++this.length;
+};
 
-console.log( userFamily);
+MyArray.prototype = myArrayProto;
+const arr = new Array();
+const arr2 = new Array();
+
+const myArray = new MyArray();
+const myArray2 = new MyArray();
+
+

@@ -1,4 +1,15 @@
+//
+// const propName = prompt();
+// const test ={
+//     [propName] : 'Value',
+// };
 
-const arr1 = [1,2,3,4,5,6,7];
+const multiplicationTable ={};
+for (let i =2; i < 10; i++){
+    for (let j =2; j < 10; j++){
+multiplicationTable[`${i} * ${j} = `] = i * j;
+    }
+}
 
-const arr2 = new Array(1,2,3,4,5,6,7);
+console.log(multiplicationTable);
+console.log(multiplicationTable[`${9} * ${7} = `]);

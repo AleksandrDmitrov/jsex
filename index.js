@@ -1,59 +1,12 @@
-// const duck = {
-//     name: 'Duck',
-//     fly (){
-//         alert(`${this.name} flying !`);
-//     },
-//     speak (){
-//         alert(`Quack -Quack !!!`);
-//     },
-// };
-// const duckChild = Object.create(duck);
-//
-// duckChild.name = 987;
-//
+'use strict';
 
-// const herbivore = {
-//     eat (){
-//         alert( `This ${this.name} eats plant!`);
-//     }
-// };
-// const carnivorous = {
-//     eat (){
-//         alert( `This ${this.name} eats  meat!`);
-//     }
-// };
-// const omnivorous = {
-//     eat (){
-//         alert( `This ${this.name} eats  anything!`);
-//     }
-// };
-//
-//
-// const  cow = Object.create(herbivore)
-//     cow.name = 'cow';
-//
-// const  tiger = Object.create(carnivorous)
-// cow.name = 'tiger';
-//
-// const  bear = Object.create(omnivorous)
-// cow.name = 'bear';
-
-
-const car = {
-    driver: null,
-    go(){
-        if(!this.driver){
-            return;
-        }
-        return `Car is going Driver is ${this.driver.name}`;
+function Car(name) {
+    if (!new.target){
+        return new  Car(name);
     }
-};
-const driver1 = {
-    name: 'Sasha',
-};
-const driver2 = {
-    name: 'Masha',
-};
+this.name = name;
 
-car.driver = driver1;
-alert(car.go());
+}
+
+const car1 = new Car( 'Batmobile');
+const car2 = Car( 'VW');

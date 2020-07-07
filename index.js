@@ -11,11 +11,21 @@
  * @param b{number}
  * @returns {*} {number}
  */
-function  sum(a, b) {
-return a + b;
+function sum(a, b) {
+    return a + b;
 }
-console.log( sum(555,554) );
+
+console.log(sum(555, 554));
 
 const sumArrow = (a, b) => {
-    return a + b;}
-console.log( sumArrow(555,554) );
+    return a + b;
+}
+console.log(sumArrow(555, 554));
+
+
+
+const arrowFac = n => n === 0
+    ? 1
+    : n * arrowFac(n - 1);
+
+

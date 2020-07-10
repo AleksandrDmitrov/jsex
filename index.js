@@ -10,6 +10,6 @@ class User {
     }
 }
 
-const user1 = new User('Petr', 'Ivanov');
-const user2 = new User('PAlena', 'Ivanova');
-const user3 = new User('Albert', 'sidorov');
+const user1 = new User('Petr', '85');
+const user2 = new User('PAlena', '57');
+const user3 = new User('Albert', '22');

@@ -33,43 +33,67 @@
 //
 // }
 
-class Squirrel {
+// class Squirrel {
+//     constructor(name) {
+//         this._name = name;
+//     }
+//
+//     eat() {
+//         return `Squirrel  ${this._name} is eating`
+//     }
+//
+//     climbTree() {
+//         return `Squirrel  ${this._name} is climbing`
+//     }
+// }
+//
+// class FlyingSquirrel extends Squirrel {
+//     constructor(name, maxDistance) {
+//         super(name);
+//         this._maxDistance = maxDistance;
+//     }
+//
+//     fly() {
+//         return `FlyingSquirrel  ${this._name} is flying at a distance ${this._maxDistance}`
+//     }
+// }
+//
+// class PucshkinSquirrel extends FlyingSquirrel {
+//     constructor(name, maxDistance, songs) {
+//         super(name, maxDistance);
+//         this._songs = songs;
+//     }
+//     dens (){
+//         return `PucshkinSquirrel ${this._name} is densing!`
+//     }
+//     sing (){
+//         this._songs.forEach( song => {
+//             console.log( song );
+//         });
+//
+//     }
+//     climbTree() {
+//       // отменить базовый функционал
+//     }
+
+
+class  Figure {
     constructor(name) {
         this._name = name;
     }
-
-    eat() {
-        return `Squirrel  ${this._name} is eating`
-    }
-
-    climbTree() {
-        return `Squirrel  ${this._name} is climbing`
+    getArea(){
+        return null;
     }
 }
 
-class FlyingSquirrel extends Squirrel {
-    constructor(name, maxDistance) {
-        super(name);
-        this._maxDistance = maxDistance;
+class  Circle extends Figure {
+    constructor(r) {
+        super( 'Circle');
+        this._r = r;
+    }
+    getArea() {
+        return this._r * this._r * Math.PI;
     }
 
-    fly() {
-        return `FlyingSquirrel  ${this._name} is flying at a distance ${this._maxDistance}`
-    }
-}
 
-class PucshkinSquirrel extends FlyingSquirrel {
-    constructor(name, maxDistance, songs) {
-        super(name, maxDistance);
-        this._songs = songs;
-    }
-    dens (){
-        return `PucshkinSquirrel ${this._name} is densing!`
-    }
-    sing (){
-        this._songs.forEach( song => {
-            console.log( song );
-        });
-
-    }
 }

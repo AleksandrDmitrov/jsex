@@ -57,3 +57,19 @@ class FlyingSquirrel extends Squirrel {
         return `FlyingSquirrel  ${this._name} is flying at a distance ${this._maxDistance}`
     }
 }
+
+class PucshkinSquirrel extends FlyingSquirrel {
+    constructor(name, maxDistance, songs) {
+        super(name, maxDistance);
+        this._songs = songs;
+    }
+    dens (){
+        return `PucshkinSquirrel ${this._name} is densing!`
+    }
+    sing (){
+        this._songs.forEach( song => {
+            console.log( song );
+        });
+
+    }
+}

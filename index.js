@@ -1,27 +1,49 @@
 'use strict';
 
 
-function binarySearch(arr, value) {
-
-    let start = 0;
-    let end = arr.length - 1;
-
-    let middle = Math.ceil( (start + end) / 2 );
-
-    while (true) {
-        if (value === arr[middle]) {
-            return middle;
+class Stack {
+    constructor(maxSize = 10000) {
+        if (typeof maxSize !== 'number') {
+            throw new TypeError();
         }
-        if (end - start === 1) {
-            break;
+        if (isNaN(maxSize) || maxSize < 0 || !Number.isInteger(maxSize)) {
+            throw new RangeError();
         }
-        if (value > arr[middle]) {
-            start = middle;
-            middle = Math.ceil( (start + end) / 2 );
-        } else {
-            end = middle;
-            middle = Math.floor( (start + end) / 2 );
-        }
+        this._size = 0;
+        this._maxSize = maxSize;
     }
-    return -1;
+
+    get isEmpty() {
+        return this._size === 0;
+    }
+
+    get size() {
+        return this._size;
+    }
+
+    push(value) {
+
+        if (this._size >= this._maxSize) {
+            throw new RangeError('Stack overflow');
+        }
+        this[`_${this._size++}`] = value;
+
+        return this._size;
+    }
+
+    pop() {
+        if (this.isEmpty) {
+            return;
+        }
+        const lastItem = this[`_${--this._size}`];
+        delete this[`_${this._size}`];
+        return lastItem;
+    }
+
+    pick() {
+        if (this.isEmpty) {
+            return;
+        }
+        return this[`_${this._size - 1}`];
+    }
 }

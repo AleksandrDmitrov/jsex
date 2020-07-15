@@ -47,3 +47,30 @@ class Stack {
         return this[`_${this._size - 1}`];
     }
 }
+
+const userString = prompt('Please, input your string');
+let stack = new Stack();
+
+for (let i = 0; i <= userString.length - 1; ++i) {
+    if (userString[i] === '(' || userString[i] === '[' || userString[i] === '{') {
+        stack.push(userString[i]);
+    }
+
+    if (userString[i] === ')' && stack.pick() === '(') {
+        stack.pop();
+    }
+
+    if (userString[i] === ']' && stack.pick() === '[') {
+        stack.pop();
+    }
+
+    if (userString[i] === '}' && stack.pick() === '{') {
+        stack.pop();
+    }
+}
+
+if (stack.isEmpty) {
+    alert('Your brackets sequence is right.');
+} else {
+    alert('Your brackets sequence is wrong.');
+}

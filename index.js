@@ -1,15 +1,27 @@
 'use strict';
 
-const mySymbol1 = Symbol('1');
-const mySymbol2 = Symbol('2');
-const mySymbol3 = Symbol('3');
-const mySymbol4 = Symbol('4');
-const mySymbol5 = Symbol('5');
-const mySymbol6 = Symbol('6');
 
+function binarySearch(arr, value) {
 
+    let start = 0;
+    let end = arr.length - 1;
 
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-for (const test of arr) {
-    console.log( test );
+    let middle = Math.ceil( (start + end) / 2 );
+
+    while (true) {
+        if (value === arr[middle]) {
+            return middle;
+        }
+        if (end - start === 1) {
+            break;
+        }
+        if (value > arr[middle]) {
+            start = middle;
+            middle = Math.ceil( (start + end) / 2 );
+        } else {
+            end = middle;
+            middle = Math.floor( (start + end) / 2 );
+        }
+    }
+    return -1;
 }

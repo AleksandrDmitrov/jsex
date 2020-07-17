@@ -7,3 +7,14 @@ const user1 = {
 };
 
 const { name, surname } = user1;
+
+const  car1 = {
+    color: 'white',
+    brand: 'BMV',
+    engine: {
+        volume: 2.0,
+        type: 'ICE',
+    }
+};
+
+const { engine: { volume } } = car1;

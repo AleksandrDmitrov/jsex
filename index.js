@@ -1,34 +1,21 @@
 'use strict';
 
-// const  myFirstMap = new Map();
-//
-// myFirstMap.set('key', 'value');
-//
-// const keyValue = myFirstMap.get('key');
-//
-// console.log( keyValue);
+const map = new Map();
 
+map.set('key', 'value');
+map.set('key1', 'value1');
+map.set('key2', 'value2');
+map.set('key3', 'value3');
+const iter = map.entries();
+console.log( iter);
 
-const vocabulary = new Map();
-vocabulary.set('cat', 'кот');
-vocabulary.set('dog', 'собака');
+const map2 = new Map([
+    ['key1', 'value1'],
+    ['key2', 'value2'],
+    ['key3', 'value3'],
+    ['key4', 'value4'],
+    ['key5', 'value5'],
+    ['key6', 'value6'],
+]);
 
-
-function translate(str, separator = ' ') {
-    const englishWords = str.split(separator);
-    const russianWords = englishWords.map(function (word) {
-        return vocabulary.has(word)
-            ? vocabulary.get(word)
-            : word;
-    });
-    return russianWords.join(separator);
-}
-//упрощенная запись
-const translate2 = (str, separator = ' ') => str
-    .split(separator)
-    .map(w => vocabulary.has(w)
-        ? vocabulary.get(w)
-        : w)
-    .join(separator);
-
-alert(translate2('cat'));
+const map2Copy = new Map(map2);

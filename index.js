@@ -19,3 +19,7 @@ const map2 = new Map([
 ]);
 
 const map2Copy = new Map(map2);
+
+map.forEach((value, key, f) =>{
+    console.log(value,key,f)
+});

@@ -1,13 +1,16 @@
 'use strict';
 
-const buttons = document.getElementsByTagName ('button');
-const btnClickHandler = ({target: 
-    {dataset: {key},
-}
-})=>{
-    console.log(key);
-}
+const buttons = document.guerySelectorAll('button[data-color]');
 
-for (const btn of buttons){
-    btn.onclick = btnClickHandler;
+const btnColorClickHandler = (e) => {
+    const{
+        target:{
+        parentElement,
+        dataset: {color},
+    },
+} = e;
+parentElement.style.setProperty('background-color', color);
+};
+for(const btn of buttons) {
+    btn.addEventListener('click', btnColorClickHandler)
 }

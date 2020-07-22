@@ -8,8 +8,18 @@
     <title>Js</title>
 </head>
 <body>
-  <ul>
-<li><button>button</button></li>
-</ul>
+<form>
+  <input type="text" name="id" value="123">
+  <button type="submit">get value</button>
+  <button type="reset">reset</button>
+</form>
+
+<script>
+  const [formElem] = document.forms;
+  formElem.addEventListener('submit', (e) => {
+    e.preventDefault();
+  });
+</script>
+
 </body>
 </html>

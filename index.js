@@ -1,16 +1,12 @@
 'use strict';
 
-const buttons = document.guerySelectorAll('button[data-color]');
-
-const btnColorClickHandler = (e) => {
-    const{
-        target:{
-        parentElement,
-        dataset: {color},
-    },
-} = e;
-parentElement.style.setProperty('background-color', color);
+const ul = document.querySelector('ul');
+const li = document.querySelector('li');
+const btn = document.querySelector('button');
+const clickHandler = (e) => {
+    console.dir(e.currentTarget);
 };
-for(const btn of buttons) {
-    btn.addEventListener('click', btnColorClickHandler)
-}
+
+ul.addEventListener('click', clickHandler, true);
+li.addEventListener('click', clickHandler, true);
+btn.addEventListener('click', clickHandler, true);
